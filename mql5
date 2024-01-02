@@ -1,0 +1,110 @@
+
+//+------------------------------------------------------------------+
+//|                                                     Smart Golden MT5|
+//|                                                forexroboteasy.com|
+//|                                          Developed by Forex Robot Easy Team|
+//+------------------------------------------------------------------+
+
+//--- Define global variables
+double priceThreshold = 0.01; // Minimum price change required for scalping strategy
+int maxDrawdown = 5; // Maximum drawdown allowed during backtesting
+int specialPrice = 149; // Special price for the first ten sales
+int regularPrice = 199; // Regular price after the first ten sales
+
+//--- Initialize the robot
+void OnInit()
+{
+   // Check if the special price period has ended
+   if (OrdersTotal() > 10)
+      Print('Special price period has ended. Regular price will be set at $', regularPrice);
+   else
+      Print('Special price of $', specialPrice, ' is still available for the first ten sales!');
+}
+
+//--- Analyze price changes in the gold market
+void PriceChangeAnalysis()
+{
+   // Code to analyze and identify small price changes in the gold market
+   // ...
+   // ...
+}
+
+//--- Execute orders based on the scalping strategy
+void OrderExecution()
+{
+   // Code to execute orders based on the scalping strategy
+   // ...
+   // ...
+}
+
+//--- Manage risk and prevent excessive drawdowns
+void RiskManagement()
+{
+   // Code to manage risk and prevent excessive drawdowns
+   // ...
+   // ...
+}
+
+//--- Extract robust characteristics from historical gold data
+void HistoricalDataAnalysis()
+{
+   // Code to extract robust characteristics from historical gold data
+   // ...
+   // ...
+}
+
+//--- Encode extracted characteristics into the system
+void SystemEncoding()
+{
+   // Code to encode the extracted characteristics into the system
+   // ...
+   // ...
+}
+
+//--- Backtest the system and check for maximum drawdown
+bool BacktestMDD()
+{
+   // Code to backtest the system and calculate maximum drawdown (MDD)
+   double drawdown = CalculateMaxDrawdown();
+   if (drawdown <= maxDrawdown)
+   {
+      Print('Backtest MDD is within the allowed limit. Maximum drawdown: ', drawdown, '%');
+      return true;
+   }
+   else
+   {
+      Print('Backtest MDD exceeds the allowed limit. Maximum drawdown: ', drawdown, '%');
+      return false;
+   }
+}
+
+//--- Calculate maximum drawdown during backtesting
+double CalculateMaxDrawdown()
+{
+   // Code to calculate maximum drawdown during backtesting
+   // ...
+   // ...
+   return maxDrawdownValue;
+}
+
+//--- Entry point of the program
+void OnTick()
+{
+   PriceChangeAnalysis();
+   OrderExecution();
+   RiskManagement();
+   HistoricalDataAnalysis();
+   SystemEncoding();
+   if (BacktestMDD())
+   {
+      // Code to start trading
+      // ...
+      // ...
+   }
+   else
+   {
+      // Code to handle excessive drawdowns
+      // ...
+      // ...
+   }
+}
